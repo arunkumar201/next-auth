@@ -3,9 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+background-color: darkslategrey; 
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,13 +13,48 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+/* Customize the appearance of the toast container */
+.react-hot-toast-container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px;
+  width: 350px;
+  max-width: 90%;
+  background-color: #fff;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* Customize the appearance of the toast message */
+.react-hot-toast-message {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Customize the appearance of the toast icon */
+.react-hot-toast-icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+/* Customize the appearance of the success toast */
+.react-hot-toast-success {
+  background-color: #0f9d58;
+  color: #fff;
+}
+
+/* Customize the appearance of the error toast */
+.react-hot-toast-error {
+  background-color: #db4437;
+  color: #fff;
+}
+
+/* Customize the appearance of the loading toast */
+.react-hot-toast-loading {
+  background-color: #4285f4;
+  color: #fff;
 }
