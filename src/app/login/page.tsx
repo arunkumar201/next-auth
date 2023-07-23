@@ -33,6 +33,7 @@ const Login = () => {
 			};
 			const res = await axios.post("/api/users/login", user);
 			toast.success("Login Successfully");
+			window.location.reload();
 			router.push("/profile");
 			console.log(res);
 		} catch (err: any) {
@@ -87,7 +88,7 @@ const Login = () => {
 				initial={{ scale: 0.8, opacity: 0 }}
 				animate={{ scale: 1, opacity: 1 }}
 				exit={{ scale: 0.8, opacity: 0 }}
-				className="bg-[#f2e4e4] p-8 rounded-md  w-1/3 text-[#2d3235] shadow-2xl"
+				className="bg-[#f2e4e4] p-8 rounded-md w-[24rem]  md:w-1/3 text-[#2d3235] shadow-2xl"
 			>
 				<h1 className="text-2xl font-bold mb-4">Login</h1>
 

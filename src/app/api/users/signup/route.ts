@@ -1,9 +1,10 @@
 import { connect } from "@/dbConfig/dbConfig";
 import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
-import { IUser,User } from "@/model/userModel";
+import { IUser, User } from "@/model/userModel";
+import { sendEmail } from "@/helper/nodeMailer";
 
-export async function POST(req: NextRequest){
+export async function POST(req: NextRequest) {
 	try {
 		if (req.method === "POST") {
 			const {
@@ -22,8 +23,10 @@ export async function POST(req: NextRequest){
 				bio,
 			} = await req.json();
 			// Check if email and password are provided
-			if (!email || !password || !fullName || !profileImg) {
-				return NextResponse.json({ error: "Please provide all required fields" });
+			if (!email || !password || !fullName) {
+				return NextResponse.json({
+					error: "Please provide all required fields",
+				});
 			}
 
 			// Check if email is already registered
@@ -54,6 +57,8 @@ export async function POST(req: NextRequest){
 				bio,
 			});
 			const savedUser = await user.save();
+			//Send the verification email
+			await sendEmail({ email, emailType: "VERIFY" });
 			return NextResponse.json({
 				message: "User created successfully",
 				user: savedUser,

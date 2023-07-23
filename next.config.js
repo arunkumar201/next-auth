@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+	loader: "imgix",
 	images: {
-		domains: ["upcdn.io"],
+		domains: ["placehold.co", "upcdn.io"],
 	},
 };
 
-module.exports = nextConfig
+module.exports = nextConfig;

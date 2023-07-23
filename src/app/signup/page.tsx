@@ -44,7 +44,7 @@ const SignUp = () => {
 		setUser(data);
 		try {
 			setLoading(true);
-			const res = await axios.post("api/users/signup", data);
+			const res = await axios.post("api/users/signup", {...data,profileImg:"ago"});
 			console.log("SignUp successfully" + res.data);
 			toast.success("Sign Up successfully", {
 				position: "top-right",
