@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { ProfileData } from '@/constants/types/user.types';
 import axios from 'axios';
 import img1 from './../../../public/vercel.svg'
-export const formatDate = (dateString: string): string => {
+ const formatDate = (dateString: string): string => {
   const date = new Date(dateString);
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
   return date.toLocaleDateString('en-US');
