@@ -1,14 +1,14 @@
-"use client";
-import { useState, useEffect } from "react";
-import { Mail, Phone, User } from "react-feather";
-import { NextPage } from "next";
-import Image from "next/image";
-import { ProfileData } from "@/constants/types/user.types";
-import axios from "axios";
-import img1 from "./../../../public/vercel.svg";
-const formatDate = (dateString: string | never) => {
-	const date = new Date(dateString);
-	return date.toLocaleDateString("en-US");
+'use client'
+import { useState,useEffect } from 'react';
+import { Mail, Phone, User } from 'react-feather';
+import Image from 'next/image';
+import { ProfileData } from '@/constants/types/user.types';
+import axios from 'axios';
+import img1 from './../../../public/vercel.svg'
+ const formatDate = (dateString: string): string => {
+  const date = new Date(dateString);
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  return date.toLocaleDateString('en-US');
 };
 
 const Profile = () => {
