@@ -4,9 +4,10 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
-		"build": "next build",
+		"build": "npm run clean && next build && next export",
 		"start": "next start",
-		"lint": "next lint"
+		"lint": "next lint",
+		"clean": "npx rimraf .next out"
 	},
 	"dependencies": {
 		"@hookform/error-message": "^2.0.1",
