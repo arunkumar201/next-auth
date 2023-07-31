@@ -4,7 +4,6 @@ const nextConfig = {
 	images: {
 		domains: ["placehold.co", "upcdn.io"],
 	},
-	productionBrowserSourceMaps: false,
 };
 
 module.exports = nextConfig;
